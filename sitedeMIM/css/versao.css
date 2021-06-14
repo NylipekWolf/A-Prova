@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style: none;
+    font-family: Open Sans Condensed;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #299af7;
+}
+i {
+    margin: 0 5px;
+}
+.container{    display: grid;
+    grid-template-columns: 2fr 12fr 2fr;
+    grid-template-rows: 70px auto auto;
+    grid-template-areas:
+        "sidnav cabe cabe"
+        "sidnav principal principal";
+    overflow-x: hidden;
+    width: 100%;
+}
+.cabecalho{
+    grid-area: cabe;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-size: auto;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: black 2px solid;
+    margin: 2px 13px;
+    z-index: 1;
+}
+.cabecalho div{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.cabecalho  div img{
+    height: 100%;
+}
+.cabecalho h1{
+    border-bottom: transparent 1px solid;
+    cursor: context-menu;
+}
+.cabecalho h1 a {
+    color: black;
+    text-decoration: none;
+}
+.cabecalho h1 a:hover{
+    border-bottom: #fcf5ff 1px solid;
+    color: #fcf5ff;
+}
+.principal{
+    grid-area: principal;
+    padding: 10px;
+    background: #1f88e7;
+    width: 100%;
+    min-height: 100vh;
+    max-width: auto;
+    animation: Caio .5s forwards;
+    animation-delay: .66s;
+    transform:translateX(1400px);
+}
+.principal h1{
+    font-size: 1.9rem;
+}
+.principal .caixa{
+    width: 30%;
+    position: relative;
+}
+.principal .caixa img{
+    
+    width: 50%;
+    display: block;
+}
+.principal .caixa .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #0000008a;
+}
+.principal .caixa .overlay:hover{
+    opacity: 1;
+}
+.principal .caixa .overlay .nomeImg{
+    color: white;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.barra{
+
+    grid-area: sidnav;
+}
+.sidnav{
+    background: url(../imagens/plano2.jpg);
+    background-size: cover;
+    width: 12.5%;
+    position: fixed;
+    height: 100%;
+    transform:translateX(1400px);
+    animation: slid .65s forwards;
+    z-index: 1;
+}
+.sidnav div{
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+}
+.sidnav div a{
+    display: flex;
+    justify-content: flex-end;
+    cursor: context-menu;
+    border-radius: 100px 0 0;
+}
+.sidnav div .logo{
+    width: 80px;
+    margin-top: 15px;
+}
+.sidnav ul{
+    width: 100%;
+    margin-top: 30px;
+}
+.sidnav ul li{
+    margin-bottom: 35px;
+    width: 100%;
+    height: 2rem;
+}
+.sidnav ul li .btn{
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    cursor: pointer;
+    font-size: 100%;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    line-height: 2rem;
+}
+.first{
+    border-color: #89141a;
+    color: #eff315;
+    background-image: linear-gradient(45deg, #ca1b1571 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+}
+.first:hover{
+    background-position: 0;
+    color: #ffffff;
+}
+.second{
+    color: #eff315;
+    border-color: #89141a;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+}
+.second:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #ca1b1571;
+    z-index: -1;
+    -webkit-transition: width 150ms ease-in-out;
+    transition: width 150ms ease-in-out;
+}
+.second:hover {
+    color: #ffffff;
+}
+  .second:hover:after {
+    width: 110%;
+}
+.trird{
+    border-color: #89141a;
+    color: #eff315;
+    background-image: linear-gradient(90deg, #ca1b1571 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 150ms ease-in-out;
+}
+.trird:hover {
+    background-position: 0;
+    color: #ffffff;
+}
+.fourth {
+    border-color: #893e6b ;
+    color: #eb45eb;
+    background-image: linear-gradient(45deg, #02348175 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+}
+.fourth:hover {
+    background-position: 0;
+    color: #fff;
+}
+.fifth {
+    color: #eb45eb;
+    border-color: #893e6b;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+}
+.fifth:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #0234817d;
+    z-index: -1;
+    -webkit-transition: width 150ms ease-in-out;
+    transition: width 150ms ease-in-out;
+}
+.fifth:hover {
+    color: #fff;
+}
+  .fifth:hover:after {
+    width: 110%;
+}
+.sixth {
+    border-color: #893e6b;
+    color: #eb45eb;
+    background-image: linear-gradient(90deg, #0234817d 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+}
+.sixth:hover {
+    background-position: 0;
+    color: #fff;
+}
+.Red{
+    text-align: right;
+    background: #89141a;
+}
+.Red .container{
+    grid-template-areas:"cabe cabe sidnav" "principal principal sidnav";
+} 
+.Red .cabecalho{
+    flex-direction: row-reverse;
+    text-align-last: right;
+    background-image: url(../imagens/baleia.jpg);
+}
+.Red .principal{
+    background: #89141a;
+    animation: Caio .5s forwards;
+    animation-delay: .66s;
+    transform:translateX(-1400px);
+}
+.Red .sidnav{
+    left: 88%;
+    background: url(../imagens/montanha.jpg);
+    background-size: cover;
+    transform:translateX(-1400px);
+    animation: slid .65s forwards;
+    z-index: 1;
+}
+.Red .sidnav div{
+    display: flex;
+    justify-content: flex-start;
+}
+.Red .sidnav .btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#livros .sidnav, #livros .principal{
+    transform: none;
+    animation: none;
+}
+#fotos .sidnav, #fotos .principal{
+    transform: none;
+    animation: none;
+}
+#profissional .sidnav, #profissional .principal{
+    transform: none;
+    animation: none;
+}
+#musica .sidnav, #musica .principal{
+    transform: none;
+    animation: none;
+}
+#Rmusica .sidnav, #Rmusica .principal{
+    transform: none;
+    animation: none;
+}
+#amigos .sidnav, #amigos .principal{
+    transform: none;
+    animation: none;
+}
+#viagens .sidnav, #amigos .principal{
+    transform: none;
+    animation: none;
+}
+@keyframes flick {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100%{
+        
+        text-shadow:
+        0 0 4px  #ff0,
+    0 0 11px #ff0,
+    0 0 19px #ff0;
+}
+
+20%, 24%, 55%{
+  
+        text-shadow: none;
+
+    }
+    
+}
+@keyframes slid {
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes Caio {
+    to{
+        transform: translateX(0);
+    }
+}
