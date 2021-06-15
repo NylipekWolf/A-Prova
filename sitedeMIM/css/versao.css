@@ -15,12 +15,25 @@ body{
 i {
     margin: 0 5px;
 }
-.container{    display: grid;
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(126, 16, 230, 0.342);
+}
+
+::-webkit-scrollbar-thumb {
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgba(236, 177, 13, 0.863);
+}
+.container{  
+    display: grid;
     grid-template-columns: 2fr 12fr 2fr;
     grid-template-rows: 70px auto auto;
-    grid-template-areas:
-        "sidnav cabe cabe"
-        "sidnav principal principal";
+    grid-template-areas:"sidnav cabe cabe" "sidnav principal principal";
     overflow-x: hidden;
     width: 100%;
 }
@@ -62,21 +75,41 @@ i {
     background: #1f88e7;
     width: 100%;
     min-height: 100vh;
-    max-width: auto;
+    max-height: auto;
     animation: Caio .5s forwards;
     animation-delay: .66s;
     transform:translateX(1400px);
+    word-wrap: break-word;
 }
 .principal h1{
     font-size: 1.9rem;
 }
+.principal h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.principal h3{
+    text-align: right;
+    font-size: 1.5rem;
+}
+.principal h4{
+    text-align: left;
+    font-size: 1.5rem;
+} 
+.principal .text{
+    font-size: 1.7rem;
+    padding: 5px 15px;
+    margin: 8px 0;
+    font-weight: 300;
+}
 .principal .caixa{
     width: 30%;
     position: relative;
+    margin: 10px;
 }
 .principal .caixa img{
-    
-    width: 50%;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 .principal .caixa .overlay{
@@ -85,7 +118,8 @@ i {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 50%;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     transition: .5s ease;
     background-color: #0000008a;
@@ -102,9 +136,65 @@ i {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+.principal .separados{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+.principal .separados img{
+    border-radius: 20px;
+    width: 20%;
+}
+.principal .esquerdo {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.principal .esquerdo img{
+    border-radius: 20px;
+    width: 20%;
+}
+.principal .esquerdo .paisagens{
+    width: 50%;
+}
+.principal .direita{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+.principal .direita img{
+    border-radius: 20px;
+    width: 19%;
+}
+.principal .direita .paisagens{
+    width: 50%;
+}
 .barra{
-
+    position: relative;
     grid-area: sidnav;
+}
+#check{
+    display: none;
+}
+#checki{
+    display: none;
+}
+label #menu-h{
+    z-index: 0;
+    left: 0px;
+    position: absolute;
+    top: 17px;
+    font-size: 30px;
+    color: #000000;
+    opacity: 0;
+}
+#check:checked ~ .sidnav {
+    left: 0;    
+}
+#checki:checked ~ .sidnav {
+    right: 0;    
 }
 .sidnav{
     background: url(../imagens/plano2.jpg);
@@ -155,7 +245,7 @@ i {
 }
 .first{
     border-color: #89141a;
-    color: #eff315;
+    color: #eb0808;
     background-image: linear-gradient(45deg, #ca1b1571 50%, transparent 50%);
     background-position: 100%;
     background-size: 400%;
@@ -166,7 +256,7 @@ i {
     color: #ffffff;
 }
 .second{
-    color: #eff315;
+    color: #eb0808;
     border-color: #89141a;
     border-radius: 0;
     position: relative;
@@ -197,7 +287,7 @@ i {
 }
 .trird{
     border-color: #89141a;
-    color: #eff315;
+    color: #eb0808;
     background-image: linear-gradient(90deg, #ca1b1571 50%, transparent 50%);
     background-position: 100%;
     background-size: 400%;
@@ -209,7 +299,7 @@ i {
 }
 .fourth {
     border-color: #893e6b ;
-    color: #eb45eb;
+    color: #fb87fb;
     background-image: linear-gradient(45deg, #02348175 50%, transparent 50%);
     background-position: 100%;
     background-size: 400%;
@@ -220,7 +310,7 @@ i {
     color: #fff;
 }
 .fifth {
-    color: #eb45eb;
+    color: #fb87fb;
     border-color: #893e6b;
     border-radius: 0;
     position: relative;
@@ -251,7 +341,7 @@ i {
 }
 .sixth {
     border-color: #893e6b;
-    color: #eb45eb;
+    color: #fb87fb;
     background-image: linear-gradient(90deg, #0234817d 50%, transparent 50%);
     background-position: 100%;
     background-size: 400%;
@@ -279,8 +369,18 @@ i {
     animation-delay: .66s;
     transform:translateX(-1400px);
 }
+.Red label #menu-hi{
+    color: white;
+    right: 0;
+    z-index: 0;
+    position: absolute;
+    top: 17px;
+    font-size: 30px;
+    padding: 7px 9px;
+    opacity: 0;
+}
 .Red .sidnav{
-    left: 88%;
+    right: 0;
     background: url(../imagens/montanha.jpg);
     background-size: cover;
     transform:translateX(-1400px);
@@ -296,50 +396,27 @@ i {
     justify-content: flex-end;
 }
 
-#livros .sidnav, #livros .principal{
-    transform: none;
-    animation: none;
-}
-#fotos .sidnav, #fotos .principal{
-    transform: none;
-    animation: none;
-}
-#profissional .sidnav, #profissional .principal{
-    transform: none;
-    animation: none;
-}
-#musica .sidnav, #musica .principal{
-    transform: none;
-    animation: none;
-}
-#Rmusica .sidnav, #Rmusica .principal{
-    transform: none;
-    animation: none;
-}
-#amigos .sidnav, #amigos .principal{
-    transform: none;
-    animation: none;
-}
+#fotos .sidnav, #fotos .principal,
+#profissional .sidnav, #profissional .principal,
+#musica .sidnav, #musica .principal,
+#Rmusica .sidnav, #Rmusica .principal,
+#amigos .sidnav, #amigos .principal,
 #viagens .sidnav, #amigos .principal{
     transform: none;
     animation: none;
 }
-@keyframes flick {
-    
-    0%, 18%, 22%, 25%, 53%, 57%, 100%{
-        
-        text-shadow:
-        0 0 4px  #ff0,
-    0 0 11px #ff0,
-    0 0 19px #ff0;
+#fotos h2{
+    text-align: center;
+    font-size: 2rem;
 }
-
-20%, 24%, 55%{
-  
-        text-shadow: none;
-
-    }
-    
+#fotos h3{
+    text-align: center;
+}
+#profissional p{
+    font-size: 1.5rem;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-bottom: #000000 2px solid;
 }
 @keyframes slid {
     to{
@@ -350,5 +427,118 @@ i {
 @keyframes Caio {
     to{
         transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        grid-template-columns: 0fr 12fr 0fr;
+    }
+    .grid{
+        grid-template-columns: auto auto;
+    }
+    label #menu-h{
+        z-index: 2;
+        opacity: 1;
+    }
+    .sidnav{
+        width: 16.5%;
+        left: -320px;
+        animation: none ;
+        transform:translateX(0px);
+    }
+    .Red .sidnav{
+        width: 15.5%;
+        right: 520px;
+        animation: none ;
+        transform:translateX(0px);
+    }
+    #checki:checked ~ .sidnav {
+        left: 649px;
+    }
+    .Red label #menu-hi{
+        z-index: 2;
+        opacity: 1;
+    }
+    .cabecalho  div img{
+        height: 100%;
+        margin-left: 20px;
+    }
+    .Red .cabecalho  div img{
+        margin-left: 0;
+        margin-right: 30px;
+    }
+    .principal .text{
+        font-size: 100%;
+        padding: 0px;
+    }
+    .principal h4 {
+        font-size: 120%;
+    }
+    .principal h3{
+        font-size: 120%;
+    }
+    .principal .caixa .overlay .nomeImg{
+        font-size: 120%;
+    }
+}
+@media screen and (max-width: 426px){
+    .sidnav{
+        width: 28.5%;
+    }
+    .Red .sidnav{
+        width: 28.5%;
+        left: 604px;
+    }
+    #checki:checked ~ .sidnav {
+        left: 304px;
+    }
+    .Red label #menu-hi{
+        z-index: 2;
+        opacity: 1;
+    }
+    .principal .esquerdo img{
+        width: 40%;
+    }
+    .principal .direita img{
+        width: 40%;
+    }
+    .principal .separados img{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 379px){
+    .sidnav{
+        width: 33.5%;
+    }
+    .Red .sidnav{
+        width: 33.5%;
+        left: 500px;
+    }
+    #checki:checked ~ .sidnav {
+        left: 250px;
+    }
+    .Red label #menu-hi{
+        z-index: 2;
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 320px){
+    .cabecalho h1 a{
+        font-size: 1rem;
+    }
+    .sidnav{
+        width: 40.5%;
+    }
+    .Red .sidnav{
+    width: 40.5%;
+    left: 690px;
+    }
+    #checki:checked ~ .sidnav {
+        left: 190px;
+    }
+    .Red label #menu-hi{
+        z-index: 2;
+        opacity: 1;
     }
 }

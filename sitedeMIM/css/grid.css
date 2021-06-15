@@ -1,0 +1,66 @@
+.M{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.M .grid-album{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.M .grid-album .album{
+    padding: 30px;
+    width: 100%;
+    height: 280px;
+}
+.M .grid-track{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.M .grid-track .track{
+    height: 320px;
+    width: 100%;
+    padding: 20px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: black 2px solid;
+}
+.grid div{
+    width: 100%;
+    padding: 5px;
+}
+.grid  div img{
+    width: 100%;
+    height: 100%;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    word-wrap: break-word;
+    height: auto;
+}
+@media screen and (max-width: 426px){
+    .M{
+        padding: 5px;
+    }
+    .M .grid-album{
+        grid-template-columns: auto ;
+        justify-content: center;
+    }
+    .M .grid-album .album{
+        padding: 5px;
+        width: 100%;
+        height: 280px;
+    }
+    .M .grid-track{
+        grid-template-columns: auto;
+    }
+    .M .grid-track .track{
+        height: 120px;
+        width: 100%;
+        padding: 5px;
+    }
+}
